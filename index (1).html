@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filtragem de Números</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style>
+        body {
+            font-family: arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Números Maiores que 10</h1>
+    <div id="resultado"></div>
+
+    <script>
+        const filtrarNumeros = (numeros) => {
+            return numeros.filter(num => num > 10).sort((a, b) => b - a);
+        };
+
+        const numerosAleatorios = Array.from({ length: 10 }, () => Math.floor(Math.random() * 50));
+
+        const numerosFiltrados = filtrarNumeros(numerosAleatorios);
+        const resultadoDiv = document.getElementById("resultado");
+
+        resultadoDiv.innerHTML += `<p>Números aleatórios: ${numerosAleatorios.join(", ")}</p>`;
+        resultadoDiv.innerHTML += `<p>Números maiores que 10 em ordem decrescente: ${numerosFiltrados.join(", ")}</p>`;
+    </script>
+</body>
+</html>
